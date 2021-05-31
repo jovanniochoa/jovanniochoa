@@ -1,6 +1,5 @@
 # .gitignore
-config.py 
-config.js
+/.env
 
 
 # Compiled class file
