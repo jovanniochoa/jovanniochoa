@@ -1,5 +1,7 @@
 # .gitignore
 config.py 
+config.js
+
 
 # Compiled class file
 *.class
