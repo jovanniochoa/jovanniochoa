@@ -27,7 +27,7 @@
     
 
     <script>
-        mapboxgl.accessToken = MapBoxToken;
+        mapboxgl.accessToken = process.env.MapBoxToken;
         var map = new mapboxgl.Map({
         container: 'map', // container id
         style: 'mapbox://styles/mapbox/streets-v11'
