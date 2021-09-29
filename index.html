@@ -12,15 +12,6 @@
 <html>
 <body>
     
-    	<div class="header">
-	  <a href="#default" class="logo">CompanyLogo</a>
-	  <div class="header-right">
-	    <a class="active" href="#home">Home</a>
-	    <a href="#contact">Contact</a>
-	    <a href="#about">About</a>
-	  </div>
-	</div>
-    
         <!-- Load the `mapbox-gl-geocoder` plugin. -->
         <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
         <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
@@ -31,6 +22,12 @@
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
     
     <div id='map' style='width: 100%; height: 100%;'></div>
+	
+	<header class='col12 contain z1 fill-blue dark'>
+	  <div class='pad1'>
+	    <h4>Heading title</h4>
+	  </div>
+	</header>
 
     <script>
         mapboxgl.accessToken = 'pk.eyJ1Ijoiam92YW5uaW9jaG9hIiwiYSI6ImNrdDdza3NjNDB2ODQyd3FubG5wYXlseWsifQ.ILImaW9FRC_1sdoR8jUn8w'
