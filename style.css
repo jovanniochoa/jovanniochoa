@@ -10,6 +10,7 @@ body{
 nav{
     position: fixed;
     top: 0;
+    width: 100%; /* Full width */
     display: grid;
     grid-template-columns: 1fr 1fr;
     color:white;
