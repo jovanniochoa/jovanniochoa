@@ -17,6 +17,11 @@ nav{
 
 }
 
+.nav a:hover {
+  background: #ddd;
+  color: black;
+}
+
 .logo{
     padding:.5em;
     font-size: 30px;
@@ -150,5 +155,9 @@ nav ul li a{
 .blue{background-color:blue}
 .green{background-color:green}
 .yellow{background-color:yellow}
+
+.main {
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
 
 
