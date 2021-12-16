@@ -1,6 +1,4 @@
 body{
-    position: absolute;
-    top: 50px;
     margin:0px;
     padding:0px;
     overflow: hidden;
@@ -10,6 +8,8 @@ body{
 }
 
 nav{
+    position: relative;
+    top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     color:white;
@@ -140,6 +140,7 @@ nav ul li a{
 
 .box{
   position: relative;
+  top: 200px;
   width:100px;
   height: 100px;
   margin:4px;
