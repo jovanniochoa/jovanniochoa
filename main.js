@@ -1,71 +1,147 @@
-// dots is an array of Dot objects,
-// mouse is an object used to track the X and Y position
-   // of the mouse, set with a mousemove event listener below
-var dots = [],
-    mouse = {
-      x: 5px,
-      y: 5px
-    };
+var c = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+ctx.canvas.width = window.innerWidth;
+ctx.canvas.height = window.innerHeight;
 
-// The Dot object used to scaffold the dots
-var Dot = function() {
-  this.x = 5px;
-  this.y = 5px;
-  this.node = (function(){
-    var n = document.createElement("div");
-    n.className = "trail";
-    document.body.appendChild(n);
-    return n;
-  }());
-};
-// The Dot.prototype.draw() method sets the position of 
-  // the object's <div> node
-Dot.prototype.draw = function() {
-  this.node.style.left = this.x + "px";
-  this.node.style.top = this.y + "px";
-};
-
-// Creates the Dot objects, populates the dots array
-for (var i = 0; i < 12; i++) {
-  var d = new Dot();
-  dots.push(d);
+window.onresize = function () {
+  ctx.canvas.width = window.innerWidth;
+  ctx.canvas.height = window.innerHeight;
 }
 
-// This is the screen redraw function
-function draw() {
-  // Make sure the mouse position is set everytime
-    // draw() is called.
-  var x = mouse.x,
-      y = mouse.y;
+dots = []; emitRate = 9; minRad = 1; maxRad = 5; color = ""; opc = 0.6; sha = 0; lifeTime = 30; tn = 0; roc = 1; speed = 1;
+
+var controls = new function() {
+  this.emitRate = emitRate;
+  this.spread = speed;
+  this.radiusMin = minRad;
+  this.radiusMax = maxRad;
+  this.color = "#ffffff";
+  this.opacity = opc;
+  this.glow = sha;
+  this.onChange_redraw = false;
+  this.randomColor = true;
+  this.lifeTime = lifeTime;
+  this.circleShape = true;
   
-  // This loop is where all the 90s magic happens
-  dots.forEach(function(dot, index, dots) {
-    var nextDot = dots[index + 1] || dots[0];
+  this.redraw = function() {
+    emitRate = controls.emitRate;
+    speed = controls.spread;
+    minRad = controls.radiusMin;
+    maxRad = controls.radiusMax;
+    lifeTime = controls.lifeTime;
+    color = controls.color;
+    opc = controls.opacity;
+    sha = controls.glow;
+    if (controls.onChange_redraw) {
+      dots.splice(0, dots.length);
+    }
+    if (controls.circleShape) {
+      roc = 1;
+    } else {
+      roc = 0;
+    }
+    if(controls.randomColor){
+      color = "";
+    }
+  }
+}
+
+var gui = new dat.GUI({resizable : false});
+gui.add(controls, "emitRate", 2, 100).step(1).onChange(controls.redraw);
+gui.add(controls, "spread", 0.1, 5).onChange(controls.redraw);
+gui.add(controls, "lifeTime", 10, 300).onChange(controls.redraw);
+gui.add(controls, "radiusMin", 1, 10).step(1).onChange(controls.redraw);
+gui.add(controls, "radiusMax", 1, 30).step(1).onChange(controls.redraw);
+gui.add(controls, "opacity", 0.1, 1).onChange(controls.redraw);
+gui.add(controls, "glow", 0, 30).step(1).onChange(controls.redraw);
+gui.addColor(controls, "color").onChange(controls.redraw);
+gui.add(controls, "circleShape").onChange(controls.redraw);
+gui.add(controls, "randomColor").onChange(controls.redraw);
+gui.add(controls, "onChange_redraw").onChange(controls.redraw);
+
+prevx = ctx.canvas.width/2 -250;
+prevy = ctx.canvas.height/8;
+var prev2 = setInterval(preview, 16.67);
+increase = Math.PI * 2 / 40;
+counter = 0;
+function preview(){
+  prevx += 8;
+  prevy += (Math.sin( counter ) / 2 + 0.5)*8;
+  emitDots(prevx, prevy);
+  counter += increase;
+}
+preview();
+setTimeout(function(){clearInterval(prev2)}, 1000);
+
+function emitDots(mx, my){
+  for(i=0; i<emitRate; i++){
+    rxv = Math.random() * 2 - 1;
+    ryv = Math.random() * 2 - 1;
+    if(color == ""){
+      col = "hsl("+Math.random() * 360+",65%,65%)";
+    } else {
+      col = color;
+    }
+    rad = Math.random() * (maxRad-minRad) + minRad;
+    dots.push({x:mx,y:my,xv:rxv, yv:ryv, col:col, rad:rad});
+  }
+}
+
+function animDots(){
+  for(i=0; i<dots.length; i++){
+    dots[i].x += dots[i].xv * speed;
+    dots[i].y += dots[i].yv * speed;
     
-    dot.x = x;
-    dot.y = y;
-    dot.draw();
-    x += (nextDot.x - dot.x) * .6;
-    y += (nextDot.y - dot.y) * .6;
-
-  });
+    ctx.beginPath();
+    ctx.fillStyle = dots[i].col;
+    ctx.globalAlpha = opc;
+    ctx.shadowColor = dots[i].col;
+    ctx.shadowBlur = sha;
+    if(roc == 0){
+      ctx.rect(dots[i].x, dots[i].y, dots[i].rad, dots[i].rad);
+    } else {
+      ctx.arc(dots[i].x, dots[i].y, dots[i].rad, 0, 2*Math.PI);
+    }
+    ctx.fill();
+    ctx.closePath();
+  }
 }
 
-addEventListener("mousemove", function(event) {
-  //event.preventDefault();
-  mouse.x = event.pageX;
-  mouse.y = event.pageY;
-});
-
-// animate() calls draw() then recursively calls itself
-  // everytime the screen repaints via requestAnimationFrame().
-function animate() {
-  draw();
-  requestAnimationFrame(animate);
+function cleanUp(){
+  if(dots.length > 1){
+    dots.splice(0, Math.ceil(dots.length/lifeTime));
+  }
 }
 
-// And get it started by calling animate().
-animate();
+function getFPS(){
+  tl = tn;
+  tn = Date.now();
+  td = tn - tl;
+  fps = Math.round(1000/td);
+  fps >= 58 ? fps = 60 : fps;
+  fpse = document.getElementById("fps");
+  fpse.innerHTML = "FPS: "+fps;
+  fpse.style="color:hsl("+(fps*2)+",100%,50%)";
+}
+
+function loop(){
+  ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
+  document.onmousemove = function(e){
+    mx = e.clientX;
+    my = e.clientY;
+    emitDots(mx, my);
+  }
+  document.ontouchmove = function(e){
+    mx = e.changedTouches[0].pageX;
+    my = e.changedTouches[0].pageY;
+    emitDots(mx, my);
+  }
+  animDots();
+  cleanUp();
+  getFPS();
+}
+loop();
+setInterval(loop, 16.67);
  
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Animation for Mouse Play~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
