@@ -3,14 +3,14 @@
    // of the mouse, set with a mousemove event listener below
 var dots = [],
     mouse = {
-      x: 0,
-      y: 0
+      x: 5px,
+      y: 5px
     };
 
 // The Dot object used to scaffold the dots
 var Dot = function() {
-  this.x = 0;
-  this.y = 0;
+  this.x = 5px;
+  this.y = 5px;
   this.node = (function(){
     var n = document.createElement("div");
     n.className = "trail";
