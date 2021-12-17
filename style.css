@@ -7,12 +7,31 @@ body{
     font-family: 'Noto Sans' sans-serif;
 }
 
-.trail { /* className for the trail elements */
+#canvas{
+  overflow: hidden;
+}
+#canvas:hover{
+  cursor: none;
+}
+
+.workshop{
+    color: #fff;
+    font-weight: 600;
     position: absolute;
-    height: 6px; width: 6px;
-    border-radius: 3px;
-    background: teal;
- }
+    top: 0px;
+    left: 75px;
+    background: #292929;
+    padding: 6px 10px;
+    transition: 0.3s;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.workshop:hover{
+    background: #fff;
+    color: #292929;
+    transition: 0.3s;
+    cursor: pointer;
+}
 
 nav{
     position: fixed;
