@@ -4,8 +4,8 @@ const myTags = [
   'JavaScript', 'Java', 'HTML',
   'C', 'C++', 'WordPress',
   'Python', 'CSS', 'Prolog',
-  'laTex', 'anime.js', 'WordPress',
-  'JSON', 'MySQL', 'VHDL',
+  'laTex', 'anime.js', 'Assembly',
+  'JSON', 'MySQL', 'REST API', 'VHDL',
 ];
 
 var tagCloud = TagCloud('.content', myTags,{
