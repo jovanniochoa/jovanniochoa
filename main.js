@@ -4,7 +4,7 @@ const myTags = [
   'JavaScript', 'Java', 'HTML',
   'C', 'C++', 'WordPress',
   'Python', 'CSS', 'Prolog',
-  'laTex', 'anime.js', 'Assembly',
+  'laTex', 'anime.js', 'MIPS Assembly',
   'JSON', 'MySQL', 'REST API', 'VHDL',
 ];
 
