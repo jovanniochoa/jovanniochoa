@@ -1,6 +1,6 @@
 ### Hi there 👋
-I am currently working on making a website. Originally started as a website resume, but I am going to host projects on this website later on. Projects such as Helium Cryptocurrency map and logging, stuff like crypto analyses. I will eventually make a login. I will then make so many different features.
+I am currently working on making a website. This website will act as a resume website where I can host all of my projects for professionals to view. In it, I plan to showcase my talent and hopefully outreach and connect individuals like you (the reader.)
 ###
 What I am doing right now:
 ###
-Getting API's and making sure I am doing BEST Practice by restricting API calls to my domain... Now all I worry about is spoofing, so I am making a "Man On The Side" to make an server-proxy so I can safely store my API keps without them being displayed publicly.
+Getting API's and making sure I am doing BEST Practice by restricting API calls to my domain. This is mainly because I want to retain best practice while aslo publishing all of my commits to GitHub; thus making everything public would be difficult.
