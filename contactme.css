@@ -1,3 +1,65 @@
+body{
+  margin:0px;
+  padding:0px;
+  overflow: hidden;
+  background-color: #fbfbfb;
+  background:url(bg.jpg) no-repeat;
+  font-family: 'Noto Sans' sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  display: block;
+  min-width: 320px;
+  font-family: "Open Sans",sans-serif; 
+  color: black;
+}
+
+nav{
+  position: fixed;
+  top: 0;
+  width: 100%; /* Full width */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color:white;
+  background-color: #584f4f;
+
+}
+
+.nav a:hover {
+background: #ddd;
+color: #1d1d1d;
+}
+
+input[type=home]:hover {
+background-color: #45a049;
+}
+
+.logo{
+  padding:.5em;
+  font-size: 30px;
+}
+
+nav ul{
+  display: grid;
+  list-style-type: none;
+  margin:0px;
+  grid-template-columns: repeat(4,1fr);
+}
+
+nav ul li{
+  padding: 1.3em;
+  justify-self: end;
+
+}
+nav ul li a{
+  color:white;
+  font-size: 22px;
+  text-decoration: none;
+  font-family: 'Montserrat' , sans-serif;
+}
+
+body {
+  background-color: #302c2c
+}
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CSS for Contact Page~~~~~~~~~~~~~~~~~~~~~~~ */
 input[type=text], select, textarea {
     width: 100%; /* Full width */
@@ -30,4 +92,7 @@ input[type=text], select, textarea {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+    margin-top: 5em;
+    margin-left: 1em;
+    margin-right: 1em;
   }
