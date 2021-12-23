@@ -1,5 +1,5 @@
 ### Hi there 👋
-I am currently working on making a website. This website will act as a resume website where I can host all of my projects for professionals to view. In it, I plan to showcase my talent and hopefully outreach and connect individuals like you (the reader.)
+I am currently working on making a website. This website will act as a resume website where I can host all of my projects for professionals to view. In it, I plan to showcase my talent and hopefully outreach and connect with individuals like you (the reader.)
 ###
 What I am doing right now:
 ###
