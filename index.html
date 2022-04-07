@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   
-  <title> Home </title>
 <head>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -35,7 +35,7 @@ body, html {
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="/" class="w3-bar-item w3-button w3-wide">Jovanni Ochoa</a>
+    <a href="/home" class="w3-bar-item w3-button w3-wide">Jovanni Ochoa</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
       <a href="/skills" class="w3-bar-item w3-button">SKILLS</a>
@@ -58,30 +58,74 @@ body, html {
   <a href="/contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
 </nav>
 
-  <div class="subjectMatter">
-    <h1>Hello,</h1>
-    <p>
-      I am Jovanni Ochoa, a Front-End developer from Houston Texas. I have <br> a passion for animation and User Interface design.
-      I am currently an Un-<br>dergraduate student at the University of Texas at Dallas. I love challeng-<br>ing myself and working with
-      people on ambitious projects.<br>
-    </p>
+<div class="HOME">
+  <div class="w3-container" style="padding:166px 16px" >
+        <div class="w3-col m6">
+            <h1>Hello,</h1>
+            <p>
+            I am Jovanni Ochoa, a Front-End developer from Houston Texas. I have <br> a passion for animation and User Interface design.
+            I am currently an Un-<br>dergraduate student at the University of Texas at Dallas. I love challeng-<br>ing myself and working with
+            people on ambitious projects.<br>
+            </p>
+        </div>
+
+        <div>
+            <div class="w3-col m6">
+                <span class="content" ></span>
+                <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"> </script>
+                <script src="main.js"></script>
+            </div>
+        </div>
+     </div>
+  </div>
+</div>
+  <!-- RESUME -->
+  <div>
+      <div class="RESUME">
+        <h3 class="w3-center">SKILLS</h3>
+        <object data="Resume-Jovanni_Ochoa.pdf" type="application/pdf" width="100%" height="1000">
+            <p>Alternative text - include a link <a href="Resume-Jovanni_Ochoa.pdf">to the PDF!</a></p>
+        </object>
+        </div>
+  </div>
+  <!-- Projects Showcase -->
+  <div class="projects" id="work">
+    <h3 class="w3-center">MY WORK</h3>
+    <p class="w3-center w3-large">Some of my Projects:</p>
+    <!-- HOPPS Video Game Embed -->
+    <iframe src="https://itch.io/embed/805775" height="167" width="552" frameborder="0"><a href="https://biowire20.itch.io/hopps">HOPPS by Biowire20</a></iframe>
+  </div>
+  <!-- CONTACT ME -->
+  <div class="contactContainer">
+    <h3 class="w3-center">Contact Me</h3>
+    <form action="https://formspree.io/f/xeqnqngg" method="post">
+
+      <label for="name">Name</label><br>
+      <input type="text" id="name" name="personName" placeholder="Enter your name here"><br>
+
+      <label for="email">Email</label><br>
+      <input type="text" id="email" name="vEmail" placeholder="Enter your email here"><br>
+
+      <label for="subject">Subject</label><br>
+      <textarea id="subject" name="subject" placeholder="Enter your message here" style="height:200px"></textarea><br>
+
+      <input type="submit" value="Submit"><br>
+
+    </form>
   </div>
 
-  <span class="content"></span>
-  <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"> </script>
-  <script src="main.js"></script>
-  
+
   <!-- Footer -->
-    <footer class="w3-center w3-black w3-padding-64">
-        <a href="/" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-        <div class="w3-xlarge w3-section">
-            <i class="fa fa-facebook-official w3-hover-opacity"></i>
-            <i class="fa fa-instagram w3-hover-opacity"></i>
-            <i class="fa fa-twitter w3-hover-opacity"></i>
-            <i class="fa fa-linkedin w3-hover-opacity"></i>
-            <i class="fa fa-github w3-hover-opacity"></i>
-        </div>
-    </footer>
+  <footer class="w3-center w3-black w3-padding-64">
+    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <div class="w3-xlarge w3-section">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+        <i class="fa fa-github w3-hover-opacity"></i>
+    </div>
+   </footer>
 
 </body>
 </html>
