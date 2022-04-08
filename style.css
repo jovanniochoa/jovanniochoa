@@ -1,5 +1,5 @@
-html:focus-within {
-  scroll-behavior: smooth;
+html{
+    overflow: scroll;
 }
 
 input[type=text], select, textarea {
