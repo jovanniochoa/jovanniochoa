@@ -1,4 +1,7 @@
-  /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CSS for Contact Page~~~~~~~~~~~~~~~~~~~~~~~ */
+html:focus-within {
+  scroll-behavior: smooth;
+}  
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CSS for Contact Page~~~~~~~~~~~~~~~~~~~~~~~ */
   input[type=text], select, textarea {
       width: 100%; /* Full width */
       padding: 12px; /* Some padding */ 
