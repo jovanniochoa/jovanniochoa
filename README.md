@@ -3,4 +3,4 @@ I am currently working on making a website. This website will act as a resume we
 ###
 What I am doing right now:
 ###
-Getting API's and making sure I am doing BEST Practice by restricting API calls to my domain. This is mainly because I want to retain best practice while aslo publishing all of my commits to GitHub; thus making everything public would be difficult.
+Getting API's and making sure I am doing BEST Practice by restricting API calls to my domain. This is mainly because I want to retain best practice while also publishing all of my commits to GitHub; thus making everything public would be difficult.
