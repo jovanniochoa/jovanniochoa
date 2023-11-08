@@ -10,7 +10,7 @@ I live in Houston, Texas and I love traveling, working out, and playing video ga
 
 
 ### My Favorite Project Repos
-* <a href="https://github.com/jovanniochoa/MachineLearningVisualization">BonfireML Website</a> - Showcases Backend Work/Algorithms
+* <a href="https://github.com/jovanniochoa/FutureWaveStudio">FutureWave Studio Website</a> - Showcases Apps & Programs made
 * <a href="https://github.com/jovanniochoa/ProjectClass">Discord Bot</a> - A Discord Bot With Commands and Talking Points
 * <a href="https://github.com/jovanniochoa/HOPPS">HOPPS</a> - Video Game Like Mario
 
