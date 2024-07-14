@@ -1,5 +1,5 @@
 ## Hey, I'm Jovanni. 
-I live in Houston, Texas and I love traveling, working out, and playing video games.
+I'm not a programmer. I'm just doing this for fun. Feel free to look through my projects.
 
 ### Get In Touch
 <a href="mailto:jovanniochoa38@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a> <a href="https://www.linkedin.com/in/jovanniochoa/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> <a href="https://www.youtube.com/@ThingsLearnedHere"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"></a> <a href="https://jovanniochoa.com/"><img src="https://img.shields.io/badge/portfolio-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white"></a> 
